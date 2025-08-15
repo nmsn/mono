@@ -1,0 +1,13 @@
+{
+  "name": "mono-repo",
+  "version": "1.0.0",
+  "description": "Monorepo with pnpm workspace",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter",
+    "start": "pnpm --filter vue2-app serve",
+    "build": "pnpm --recursive run build",
+    "test": "pnpm --recursive run test"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
