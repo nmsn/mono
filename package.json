@@ -4,10 +4,18 @@
   "description": "Monorepo with pnpm workspace",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter",
-    "start": "pnpm --filter vue2-app serve",
-    "build": "pnpm --recursive run build",
-    "test": "pnpm --recursive run test"
+    "dev": "node scripts/dev.js",
+    "start": "pnpm run dev",
+    "build": "cd projects/vue2-app && npm run build",
+    "clean": "node scripts/clean.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:all": "pnpm install -r"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "fs-extra": "^11.1.0",
+    "chalk": "^4.1.2",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "packageManager": "pnpm@8.15.0"
 }

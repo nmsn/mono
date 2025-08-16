@@ -11,7 +11,10 @@
   "dependencies": {
     "@mono/module-a": "workspace:*",
     "@mono/module-b": "workspace:*",
+    "@mono/shared-store": "workspace:*",
     "core-js": "^3.8.3",
+    "element-ui": "^2.15.14",
+    "lodash-es": "^4.17.21",
     "vue": "^2.7.15",
     "vue-router": "^3.6.5",
     "vuex": "^3.6.2"

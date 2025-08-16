@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Vue 2 App</title>
+    <title>Vue 2 Monorepo App</title>
+    <!-- CDN CSS Resources -->
+    <% if (process.env.NODE_ENV === 'production' && htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+      <% for (let css of htmlWebpackPlugin.options.cdn.css) { %>
+        <link rel="stylesheet" href="<%= css %>">
+      <% } %>
+    <% } %>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <!-- CDN JS Resources -->
+    <% if (process.env.NODE_ENV === 'production' && htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <% for (let js of htmlWebpackPlugin.options.cdn.js) { %>
+        <script src="<%= js %>"></script>
+      <% } %>
+    <% } %>
     <!-- built files will be auto injected -->
   </body>
 </html>

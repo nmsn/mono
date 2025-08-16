@@ -1,0 +1,18 @@
+{
+  "name": "mono-build-scripts",
+  "version": "1.0.0",
+  "description": "Build scripts for monorepo",
+  "main": "index.js",
+  "scripts": {
+    "build:modules": "node scripts/build-modules.js",
+    "build:app": "cd projects/vue2-app && npm run build",
+    "build:all": "npm run build:modules && npm run build:app",
+    "dev:modules": "concurrently \"cd packages/module-a && npm run dev\" \"cd packages/module-b && npm run dev\"",
+    "clean": "node scripts/clean.js"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "fs-extra": "^11.1.0",
+    "chalk": "^4.1.2"
+  }
+}
